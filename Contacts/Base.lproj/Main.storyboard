@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tQA-aS-sfd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EEU-gE-cVU">
+            <objects>
+                <viewController id="tQA-aS-sfd" customClass="ViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wU7-4m-9wY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="i1y-bA-Wbs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tQA-aS-sfd" id="bJg-Ey-L1y"/>
+                                    <outlet property="delegate" destination="tQA-aS-sfd" id="aSC-j1-arq"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zit-FJ-GOa">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vaX-q1-WIh"/>
+                                    <barButtonItem id="VyH-jA-c0M">
+                                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                        <connections>
+                                            <action selector="showNewContactAlert" destination="tQA-aS-sfd" id="BUH-mA-yHf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VSZ-ZG-mgc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zit-FJ-GOa" firstAttribute="trailing" secondItem="VSZ-ZG-mgc" secondAttribute="trailing" id="FPU-g1-NcY"/>
+                            <constraint firstItem="zit-FJ-GOa" firstAttribute="bottom" secondItem="VSZ-ZG-mgc" secondAttribute="bottom" id="NPH-6H-7F7"/>
+                            <constraint firstItem="i1y-bA-Wbs" firstAttribute="trailing" secondItem="VSZ-ZG-mgc" secondAttribute="trailing" id="e68-Wy-zw7"/>
+                            <constraint firstItem="zit-FJ-GOa" firstAttribute="leading" secondItem="VSZ-ZG-mgc" secondAttribute="leading" id="eYR-qb-A1E"/>
+                            <constraint firstItem="i1y-bA-Wbs" firstAttribute="top" secondItem="wU7-4m-9wY" secondAttribute="top" id="efF-tX-Gai"/>
+                            <constraint firstItem="zit-FJ-GOa" firstAttribute="top" secondItem="i1y-bA-Wbs" secondAttribute="bottom" id="tk2-fE-bHj"/>
+                            <constraint firstItem="i1y-bA-Wbs" firstAttribute="leading" secondItem="VSZ-ZG-mgc" secondAttribute="leading" id="vFD-Cw-QZ4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="i1y-bA-Wbs" id="Ile-Y5-UBb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1y-Fa-g26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20.289855072463769" y="25.446428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
