@@ -11,18 +11,24 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     private var contacts: [ContactProtocol] = [] {
         didSet {
-            self.contacts.sort {$0.title < $1.title}
+            contacts.sort {$0.title < $1.title}
+            storage.save(contacts: contacts)
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        storage = ContactStorage()
+        loadContacts()
     }
 //    private func loadContacts(){
 //        contacts.append(Contact(title: "Мой Номер", phone: "+79175046392"))
 //        contacts.append(Contact(title: "Машунька", phone: "+79251898089"))
 //        contacts.append(Contact(title: "Мой Номер", phone: "+78005552525"))
 //    }
+    var storage: ContactStorageProtocol!
+    private func loadContacts () {
+        contacts = storage.load()
+    }
     @IBAction func showNewContactAlert() {
         let alertController = UIAlertController(title: "Новый контакт", message: "Введите имя и номер телефона", preferredStyle: .alert)
         alertController.addTextField { textField in
